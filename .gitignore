@@ -1,4 +1,5 @@
 Python-3.12.8.tgz
 Python-3.12.8/*
+*.mkv
 mediapipe-env/*
 .venv/*
