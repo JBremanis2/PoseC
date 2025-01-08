@@ -1,5 +1,11 @@
 Python-3.12.8.tgz
 Python-3.12.8/*
 *.mkv
-mediapipe-env/*
+mediapipe_env/*
 .venv/*
+pose_deploy_linevec_faster_4_stages.prototxt:Zone.Identifier
+pose_deploy_linevec_faster_4_stages.prototxt
+pose_deploy.prototxt
+pose_deploy.prototxt:Zone.Identifier
+pose_iter_584000.caffemodel
+pose_iter_584000.caffemodel:Zone.Identifier
