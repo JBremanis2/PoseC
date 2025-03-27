@@ -9,3 +9,5 @@ pose_deploy.prototxt
 pose_deploy.prototxt:Zone.Identifier
 pose_iter_584000.caffemodel
 pose_iter_584000.caffemodel:Zone.Identifier
+mlcda_env*
+mlcda_env/*
