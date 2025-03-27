@@ -1,2 +1,4 @@
-this is text
 # PoseC
+
+Git project for technology validation.
+
