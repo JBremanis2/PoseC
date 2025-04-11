@@ -1,0 +1,238 @@
+# Overview
+Airformatic is a post-ride analysis tool that helps competitive cyclists improve their performance by detecting posture inefficiencies using video input and correlating them with performance metrics. The system analyzes ride videos, detects posture deviations, and provides actionable feedback to help cyclists optimize their form and reduce power loss.
+
+Target Users:
+- Competitive and aspiring amateur cyclists (age 20-40)
+- Training 4+ times/week with power meters and bike computers
+- Cycling coaches and youth development teams
+
+Problem: Most cyclists aren't aware of posture inefficiencies during rides, leading to unnecessary power loss. Existing solutions are either expensive, require lab conditions, or don't provide actionable feedback.
+
+# Core Features
+
+## 1. Video Input Processing
+- Camera input handling:
+  - Support for bike-mounted wide-angle USB/mobile cameras
+  - Local video storage for post-processing
+  - Frame timestamping for data alignment
+- Why important: Foundation for all posture analysis
+- Implementation: Using OpenCV and local filesystem
+
+## 2. Pose Estimation & Analysis
+- Real-time pose detection:
+  - MediaPipe integration for keypoint extraction
+  - Back angle and head tilt measurements
+  - Posture state classification (Good/Drift/Bad)
+- Why important: Core analysis engine for feedback
+- Implementation: MediaPipe Pose + custom angle calculations
+
+## 3. Performance Metric Integration
+- Data synchronization:
+  - Import power/speed/HR data from bike computer
+  - Timestamp alignment with video frames
+  - Local SQLite storage for analysis
+- Why important: Links posture to performance impact
+- Implementation: SQLite + timestamp-based data fusion
+
+## 4. Post-Ride Analysis UI
+- Timeline visualization:
+  - Color-coded posture segments
+  - Performance metric overlay
+  - Key deviation highlights
+- Feedback generation:
+  - Power/speed impact calculations
+  - Actionable improvement suggestions
+- Why important: Delivers insights to users
+- Implementation: React Native + custom visualization components
+
+# User Experience
+
+## User Personas
+
+### Primary: Competitive Cyclist
+- Tech-savvy amateur racer
+- Uses power meter and bike computer
+- Seeks marginal performance gains
+- Values data-driven training
+
+### Secondary: Cycling Coach
+- Trains multiple athletes
+- Needs scalable feedback tools
+- Focuses on technique improvement
+
+## Key User Flows
+
+1. Ride Recording
+   - Mount camera on bike
+   - Start video recording
+   - Complete training session
+   - Export bike computer data
+
+2. Post-Ride Analysis
+   - Import ride data and video
+   - View color-coded timeline
+   - Identify problem segments
+   - Review performance impact
+
+3. Feedback Review
+   - Check posture deviation highlights
+   - View power/speed correlations
+   - Read improvement suggestions
+   - Plan next session focus
+
+# Technical Architecture
+
+## System Components
+
+### 1. Input Processing Module
+- Video frame extraction
+- Timestamp synchronization
+- Local storage management
+
+### 2. Pose Analysis Engine
+- MediaPipe pose detection
+- Angle calculation system
+- Posture state classifier
+
+### 3. Data Integration Layer
+- Bike computer data parser
+- SQLite database schema
+- Timestamp alignment logic
+
+### 4. Analysis & Feedback System
+- Performance correlation engine
+- Segment classification
+- Feedback generation rules
+
+### 5. User Interface
+- React Native components
+- Timeline visualization
+- Metric display system
+- Video playback controls
+
+## Data Models
+
+### Video Data
+```sql
+CREATE TABLE video_frames (
+    frame_id INTEGER PRIMARY KEY,
+    timestamp DATETIME,
+    video_path TEXT,
+    frame_number INTEGER
+);
+```
+
+### Pose Data
+```sql
+CREATE TABLE pose_data (
+    pose_id INTEGER PRIMARY KEY,
+    frame_id INTEGER,
+    back_angle FLOAT,
+    head_tilt FLOAT,
+    posture_state TEXT,
+    confidence FLOAT,
+    FOREIGN KEY (frame_id) REFERENCES video_frames(frame_id)
+);
+```
+
+### Performance Metrics
+```sql
+CREATE TABLE performance_metrics (
+    metric_id INTEGER PRIMARY KEY,
+    timestamp DATETIME,
+    power FLOAT,
+    speed FLOAT,
+    heart_rate INTEGER
+);
+```
+
+# Development Roadmap
+
+## Phase 1: Foundation (MVP)
+1. Video Input & Storage
+   - Camera integration
+   - Local file management
+   - Basic timestamp handling
+
+2. Basic Pose Detection
+   - MediaPipe setup
+   - Keypoint extraction
+   - Simple angle calculations
+
+## Phase 2: Analysis Engine
+1. Posture Classification
+   - State detection logic
+   - Threshold calibration
+   - Segment labeling
+
+2. Data Integration
+   - SQLite setup
+   - Metric import system
+   - Basic data alignment
+
+## Phase 3: User Interface
+1. Timeline View
+   - Color-coded segments
+   - Basic playback controls
+   - Metric display
+
+2. Feedback System
+   - Performance correlation
+   - Basic insights generation
+   - Improvement suggestions
+
+# Logical Dependency Chain
+
+1. Foundation Layer
+   - Video capture & storage
+   - Basic pose detection
+   - Data structures
+
+2. Processing Layer
+   - Pose analysis
+   - Metric integration
+   - State classification
+
+3. User Interface
+   - Timeline visualization
+   - Playback controls
+   - Feedback display
+
+# Risks and Mitigations
+
+## Technical Risks
+1. Pose Detection Accuracy
+   - Risk: Poor detection in varied lighting
+   - Mitigation: Multiple detection passes, confidence thresholds
+
+2. Performance Impact
+   - Risk: Slow video processing
+   - Mitigation: Batch processing, optimization flags
+
+3. Data Sync Precision
+   - Risk: Timestamp misalignment
+   - Mitigation: Robust sync algorithm, error correction
+
+## Resource Constraints
+1. Processing Power
+   - Risk: Mobile device limitations
+   - Mitigation: Optimize MediaPipe settings, background processing
+
+2. Storage Space
+   - Risk: Large video files
+   - Mitigation: Automatic cleanup, compression options
+
+# Appendix
+
+## Performance Metrics
+- Power accuracy: ±2%
+- Pose detection rate: 15-30 fps
+- Storage requirements: ~100MB/hour of riding
+- Processing time: <2x ride duration
+
+## Technical Dependencies
+- MediaPipe Pose
+- OpenCV
+- React Native
+- SQLite
+- Python backend services 

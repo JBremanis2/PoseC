@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "generatedAt": "2025-04-11T08:53:26.389Z",
+    "tasksAnalyzed": 10,
+    "thresholdScore": 5,
+    "projectName": "Your Project Name",
+    "usedResearch": true
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Setup Project Repository and Core Dependencies",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down the 'Setup Project Repository and Core Dependencies' task into 4 subtasks, focusing on repository initialization, dependency setup, documentation creation, and development environment configuration.",
+      "reasoning": "This task involves multiple technical components (repository setup, dependency configuration, documentation) but follows standard development practices. Medium complexity due to the variety of dependencies and need for proper documentation and environment setup."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Implement Video Input Processing Module",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide the 'Implement Video Input Processing Module' task into 5 subtasks covering video capture implementation, storage management, frame extraction with timestamping, compression optimization, and utility function development.",
+      "reasoning": "Higher complexity due to technical challenges of working with video processing, precise timestamping requirements, and storage optimization needs. Multiple interconnected components need to work together seamlessly."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Build Pose Estimation Engine",
+      "complexityScore": 8,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the 'Build Pose Estimation Engine' task into 5 subtasks addressing MediaPipe integration, custom posture metric algorithms, posture state classification, performance optimization, and confidence scoring implementation.",
+      "reasoning": "High complexity due to the need for custom algorithm development on top of MediaPipe, performance optimization concerns, and the technical sophistication of accurate pose detection and classification for cyclists."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Develop SQLite Database Schema and Storage Layer",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the 'Develop SQLite Database Schema and Storage Layer' task into 4 subtasks focused on schema implementation, migration scripts, data access layer development, and performance optimization through indexing.",
+      "reasoning": "Moderate complexity due to the need for a well-designed database schema, migration handling, and optimization. Requires careful planning for data relationships and efficient querying patterns."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Create Performance Metric Integration System",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the 'Create Performance Metric Integration System' task into 5 subtasks covering file format parsers, import workflow, timestamp alignment, error handling, and caching implementation.",
+      "reasoning": "Significant complexity due to the variety of file formats to support, timestamp synchronization challenges, and need for robust error handling. The data integration aspects require careful design and testing."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Implement Data Synchronization Engine",
+      "complexityScore": 9,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide the 'Implement Data Synchronization Engine' task into 5 subtasks addressing timestamp alignment algorithms, data fusion implementation, interpolation methods, caching layer, and diagnostic tools development.",
+      "reasoning": "Very high complexity due to the technical challenges of precise timestamp alignment across different data sources, handling clock drift, and ensuring accurate correlation. This is a core component requiring sophisticated algorithms and extensive testing."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Develop Posture Classification and Analysis Algorithms",
+      "complexityScore": 8,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the 'Develop Posture Classification and Analysis Algorithms' task into 5 subtasks covering classification logic, segment labeling, correlation analysis, threshold calibration, and statistical analysis functions.",
+      "reasoning": "High complexity due to the algorithmic sophistication required for accurate posture classification and correlation with performance metrics. Requires both machine learning expertise and domain knowledge of cycling biomechanics."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Build Basic React Native UI Framework",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the 'Build Basic React Native UI Framework' task into 4 subtasks focusing on project structure setup, core UI component implementation, navigation flow development, and state management implementation.",
+      "reasoning": "Moderate complexity involving standard React Native development practices but requiring careful planning for navigation flows and component reusability. The mobile-specific considerations add some complexity."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Implement Timeline Visualization and Playback Controls",
+      "complexityScore": 8,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the 'Implement Timeline Visualization and Playback Controls' task into 5 subtasks covering timeline component creation, video playback synchronization, performance metric overlay, interactive navigation features, and thumbnail generation.",
+      "reasoning": "High complexity due to the interactive nature of the timeline, synchronization requirements with video playback, and need for smooth performance with potentially large datasets. Requires sophisticated UI development skills."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Develop Feedback Generation System",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide the 'Develop Feedback Generation System' task into 5 subtasks addressing impact calculation algorithms, rule-based suggestion system, personalization features, visualization layer, and summary report generation.",
+      "reasoning": "Significant complexity in translating technical analysis into meaningful, actionable feedback. Requires domain expertise in cycling performance and sophisticated algorithms to generate personalized, prioritized recommendations."
+    }
+  ]
+}
