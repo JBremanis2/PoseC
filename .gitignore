@@ -14,3 +14,5 @@ mlcda_env/*
 *.mp4
 data/*
 a.txt
+SkeletonHelperGLTF_{frame}.glb
+__pycache__/SkeletonHelperGLTF.cpython-312.pyc
